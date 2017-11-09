@@ -1,0 +1,41 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+Question {{qn}}
+{% endblock %}
+
+{% block styles %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="well well-lg">
+
+    For each of the 10 choices below, choose either option A or option B. If you choose option A,
+    you will receive the corresponding amount of money specified (between CHF 0.50 and CHF 5).
+    If you choose option B, you will receive either CHF 5 or CHF 0, depending on the outcome of
+    rolling the fair die with 3 sides coloured in red and 3 sides coloured in blue.
+
+</div>
+{{ formset.management_form }}
+<table class="table1 table table-striped table-hover">
+
+    {% for f in formset %}
+    <tr>
+        <td>{{f.non_field_errors}}</td>
+        <td>{{forloop.counter}}</td>
+        {% for field in f %}
+        <td>{{ field }}</td>
+        <td>{{ field.errors }}</td>
+        {% endfor %}
+
+
+    </tr>
+
+    {% endfor %}
+</table>
+
+{% next_button %}
+{% endblock %}

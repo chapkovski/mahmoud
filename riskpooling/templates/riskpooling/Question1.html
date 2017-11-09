@@ -1,0 +1,52 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+Question {{qn}}
+{% endblock %}
+
+{% block styles %}
+
+{% endblock %}
+
+{% block content %}
+<div class="well well-lg">
+    <div>
+        You have CHF {{Constants.q1endowment}} to be allocated to 2 identical dice, D1 and D2, both of which have 3 sides coloured in blue and
+        3
+        sides coloured in red. Both dice will be rolled simultaneously. If D1 lands on red, you win the amount that you
+        allocated to D1, otherwise you loose that amount. Similarly, if D2 lands on red, you win the amount that you
+        allocated to D2, otherwise you loose that amount.
+    </div>
+    <div>
+        Note that in the majority of the following cases, there is a cost associated with splitting your CHF {{Constants.q1endowment}}
+        endowment
+        amongst the two dice, but there is no cost associated with allocating your entire endowment to one of the two
+        dice.
+    </div>
+    <div>
+        How do you choose to allocate your CHF {{Constants.q1endowment}} to D1 and D2:
+    </div>
+</div>
+{{ formset.management_form }}
+<table class="table1 table table-striped table-hover">
+
+    {% for f in formset %}
+    <tr>
+        <td>{{f.non_field_errors}}</td>
+        <td><b>{{ f.instance.case_n}}</b></td>
+        <td><b>{{ f.instance.cost }}</b></td>
+        {% for field in f %}
+        <td>{{ field }}</td>
+        <td>{{ field.errors }}</td>
+        {% endfor %}
+
+
+    </tr>
+
+    {% endfor %}
+</table>
+
+{% next_button %}
+
+{% endblock %}
