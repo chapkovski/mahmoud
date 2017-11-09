@@ -12,7 +12,7 @@ doc = """Risk game for Mahmoud Ola, University of St. Gallen"""
 
 
 class Constants(BaseConstants):
-    name_in_url = 'riskpooling'
+    name_in_url = 'mahmoud'
     players_per_group = None
     num_rounds = 1
     q1endowment = 100
@@ -21,9 +21,9 @@ class Constants(BaseConstants):
 
 class Subsession(BaseSubsession):
     def creating_session(self):
-        with open('riskpooling/q1.csv') as f:
+        with open('mahmoud/q1.csv') as f:
             questions1 = list(csv.DictReader(f))
-        with open('riskpooling/q3.csv') as f:
+        with open('mahmoud/q3.csv') as f:
             questions3 = list(csv.DictReader(f))
         for p in self.get_players():
             for q in questions1:

@@ -105,7 +105,7 @@ SESSION_CONFIGS = [
         'name': 'mahmoud',
         'display_name': 'mahmoud',
         'num_demo_participants': 1,
-        'app_sequence': ['riskpooling'],
+        'app_sequence': ['mahmoud'],
 
 
     }

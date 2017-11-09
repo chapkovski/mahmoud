@@ -69,18 +69,18 @@ class Question3(QPage):
 class Question3a(Question3):
     qn = '3a'
     qtype = 'a'
-    template_name = 'riskpooling/Question3.html'
+    template_name = 'mahmoud/Question3.html'
 
 
 class Question3b(Question3):
     qn = '3b'
     qtype = 'b'
-    template_name = 'riskpooling/Question3.html'
+    template_name = 'mahmoud/Question3.html'
 
 class Question3c(Question3):
     qn = '3c'
     qtype = 'c'
-    template_name = 'riskpooling/Question3.html'
+    template_name = 'mahmoud/Question3.html'
 
 page_sequence = [
     Question1,
