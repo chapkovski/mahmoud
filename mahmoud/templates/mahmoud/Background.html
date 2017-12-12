@@ -1,0 +1,16 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+Background Information
+{% endblock %}
+
+{% block styles %}
+
+{% endblock %}
+
+{% block content %}
+{{form.as_ul}}
+{% next_button %}
+
+{% endblock %}

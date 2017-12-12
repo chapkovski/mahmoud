@@ -7,7 +7,13 @@ from django import forms
 from .forms import Q1FormSet, Q3FormSet
 from django.db.models import Q
 
-
+class Intro(Page):
+    ...
+class Background(Page):
+    form_model = models.Player
+    form_fields = ['gender','field_of_study','level_of_study']
+class Results(Page):
+    ...
 class QPage(Page):
     qn = None
 
@@ -83,9 +89,12 @@ class Question3c(Question3):
     template_name = 'mahmoud/Question3.html'
 
 page_sequence = [
+    Intro,
+    Background,
     Question1,
     Question2,
     Question3a,
     Question3b,
     Question3c,
+    Results,
 ]

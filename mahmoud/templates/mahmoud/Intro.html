@@ -1,0 +1,39 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+Experiment Overview and Instructions
+{% endblock %}
+
+{% block styles %}
+
+{% endblock %}
+
+{% block content %}
+<div class="well well-lg">
+
+
+
+<div>You are participating in an experiment conducted by researchers at the University of St Gallen. The experiment asks
+    you to make a series of choices among alternatives that involve monetary prizes. It specifically consists of a
+    sequence of hypothetical choice questions that ask you to play certain dice-rolling games. Each game and question
+    will be explained in detail as you go on.
+</div>
+    <br>
+<div>We are only interested in your personal preferences, so please take the time to think about what exactly you would
+    prefer to do before you answer each question. You should expect to complete the experiment in no more than 30
+    minutes.
+</div>
+    <br>
+<div>Your anonymity will be preserved. 10 of the total number pf participants will receive a REWARD based on their
+    choice in ONE randomly selected game. You will only see the output of each game (and your potential reward) once you
+    finish the experiment.
+</div>
+    <br>
+<div>Thank you in advance for your participation!</div>
+    <br>
+<div>Click 'Next' to begin experiment</div>
+</div>
+{% next_button %}
+
+{% endblock %}
