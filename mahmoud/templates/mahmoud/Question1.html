@@ -48,7 +48,7 @@ Question {{qn}}
     {% for f in formset %}
     <tr>
         <td>{{f.non_field_errors}}</td>
-        <td><b>{{ f.instance.case_n}}</b></td>
+        <td><b>Case {{ f.instance.case_n}}</b></td>
         <td><b>{{ f.instance.cost }}</b></td>
         {% for field in f %}
         <td>{{ field }}</td>

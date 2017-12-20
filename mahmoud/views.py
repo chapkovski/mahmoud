@@ -41,6 +41,7 @@ class Question1(QPage):
         return super().post()
 
 
+
 class Question2(QPage):
     qn = 2
     form_model = Player
@@ -77,7 +78,6 @@ class Question3a(Question3):
     qtype = 'a'
     template_name = 'mahmoud/Question3.html'
 
-
 class Question3b(Question3):
     qn = '3b'
     qtype = 'b'
@@ -88,9 +88,12 @@ class Question3c(Question3):
     qtype = 'c'
     template_name = 'mahmoud/Question3.html'
 
+    def before_next_page(self):
+        self.player.set_payoffs()
+
 page_sequence = [
-    Intro,
-    Background,
+    # Intro,
+    # Background,
     Question1,
     Question2,
     Question3a,

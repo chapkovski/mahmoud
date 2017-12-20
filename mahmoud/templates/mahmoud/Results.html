@@ -10,6 +10,48 @@ Thank you for your participation
 {% endblock %}
 
 {% block content %}
+<h3>Question 1:</h3>
+<table class="table  table-hover table-striped table-responsive">
+    <tr>
+
+        <td>Selected option: {{player.selecting_q1}}</td>
+        <td>Dice for D1 landed at: {% if player.dice_q1_d1 %}RED{% else %}BLUE{% endif %}</td>
+        <td>Dice for D2 landed at: {% if player.dice_q1_d2 %}RED{% else %}BLUE{% endif %}</td>
+        <td>Your payoff for this question: <b>{{player.profit_q1}}</b></td>
+    </tr>
+</table>
+    <h3>Question 2:</h3>
+<table class="table  table-hover table-striped table-responsive">
+    <tr>
+        <td>Question 2:</td>
+        <td>You chose to invest to the game: {{player.question2b}}</td>
+        <td>The dice landed at: {% if player.dice_q2 %}BLUE{% else %}RED{% endif %}</td>
+        <td>Your payoff for this question: <b>{{player.profit_q2}}</b></td>
+    </tr>
+</table>
+    <h3>Question 3:</h3>
+<table class="table  table-hover table-striped table-responsive">
+    <tr>
+        <td>Question 3a:</td>
+        <td>Selected option: {{player.selecting_q3a}}</td>
+        <td>Dice for D1 landed at: {% if player.dice_q3a %}RED{% else %}BLUE{% endif %}</td>
+        <td>Your payoff for this question: <b>{{player.profit_q3a}}</b></td>
+    </tr>
+    <tr>
+        <td>Question 3b:</td>
+        <td>Selected option: {{player.selecting_q3b}}</td>
+        <td>Dice landed at: {% if player.dice_q3b %}RED{% else %}BLUE{% endif %}</td>
+        <td>Your payoff for this question: <b>{{player.profit_q3b}}</b></td>
+    </tr>
+    <tr>
+        <td>Question 3c:</td>
+        <td>Selected option: {{player.selecting_q3c}}</td>
+        <td>Dice for D1 landed at: {% if player.dice_q3c %}RED{% else %}BLUE{% endif %}</td>
+        <td>Your payoff for this question: <b>{{player.profit_q3c}}</b></td>
+    </tr>
+
+</table>
+<h3>Your final payoff: <b>{{player.payoff}}</b></h3>
 <h4>You will be notified by email over the coming weeks whether you were one of the
     randomly selected participants who will be receiving their reward.</h4>
 {% next_button %}
