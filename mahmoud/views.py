@@ -92,8 +92,8 @@ class Question3c(Question3):
         self.player.set_payoffs()
 
 page_sequence = [
-    # Intro,
-    # Background,
+    Intro,
+    Background,
     Question1,
     Question2,
     Question3a,
