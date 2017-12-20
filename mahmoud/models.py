@@ -19,9 +19,9 @@ class Constants(BaseConstants):
     q1endowment = 100
     q2endowment = 10
 
-    with open('mahmoud/~q1.csv') as f:
+    with open('mahmoud/q1.csv') as f:
         questions1 = list(csv.DictReader(f))
-    with open('mahmoud/~q3.csv') as f:
+    with open('mahmoud/q3.csv') as f:
         questions3 = list(csv.DictReader(f))
     # print(questions3)
 
