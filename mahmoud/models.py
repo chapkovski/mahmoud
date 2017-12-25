@@ -32,7 +32,7 @@ class Subsession(BaseSubsession):
             for q in Constants.questions1:
                 Q1.objects.create(player=p, case_n=q['case'], cost=q['cost'],
                                   rule=bool(q['rule']),
-                                  real_cost=float(q['realcost']),)
+                                  real_cost=float(q['realcost']), )
 
             for q in Constants.questions3:
                 Q3.objects.create(player=p, option_a=q['option_a'], option_b=q['option_b'], type=q['type'], A=q['A'],
@@ -83,7 +83,10 @@ class Player(BasePlayer):
                                       choices=['Economics/finance', 'Other '], widget=widgets.RadioSelectHorizontal)
     level_of_study = models.CharField(choices=['Bachelor student', 'Master student'],
                                       widget=widgets.RadioSelectHorizontal)
-    email=djmodels.EmailField(verbose_name='Enter emai')
+    email = djmodels.EmailField(verbose_name=' if you would like to be considered for '
+                                             'the random reward, please enter your email here.',
+                                null=True,
+                                blank=True)
 
     def set_payoffs(self):
         selected_decision_q1 = Q1.objects.get(player=self, case_n=self.selecting_q1)
@@ -133,15 +136,18 @@ class GeneralQuestion(djmodels.Model):
 
     class Meta:
         abstract = True
+
+
 from django.core.validators import MaxValueValidator, MinValueValidator
+
 
 class Q1(GeneralQuestion):
     case_n = models.CharField()
     cost = models.CharField()
-    d1 = djmodels.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(Constants.q1endowment)],null=True)
-    d2 = djmodels.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(Constants.q1endowment)],null=True)
+    d1 = djmodels.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(Constants.q1endowment)], null=True)
+    d2 = djmodels.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(Constants.q1endowment)], null=True)
     rule = models.BooleanField()
-    real_cost= models.FloatField()
+    real_cost = models.FloatField()
 
 
 class Q3(GeneralQuestion):
