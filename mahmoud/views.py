@@ -13,7 +13,8 @@ class Background(Page):
     form_model = models.Player
     form_fields = ['gender','field_of_study','level_of_study']
 class Results(Page):
-    ...
+    form_model = models.Player
+    form_fields = ['email']
     # def vars_for_template(self):
     #     self.player.set_payoffs()
 class QPage(Page):

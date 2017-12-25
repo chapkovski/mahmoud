@@ -54,6 +54,7 @@ Thank you for your participation
 <h3>Your final payoff: <b>{{player.payoff}}</b></h3>
 <h4>If your final payoff is positive, you will be notified by email over the coming weeks whether you were one of the
     randomly selected participants who will be receiving their reward.</h4>
+{% formfield player.email %}
 {% next_button %}
 
 {% endblock %}

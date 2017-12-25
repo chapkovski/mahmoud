@@ -83,6 +83,7 @@ class Player(BasePlayer):
                                       choices=['Economics/finance', 'Other '], widget=widgets.RadioSelectHorizontal)
     level_of_study = models.CharField(choices=['Bachelor student', 'Master student'],
                                       widget=widgets.RadioSelectHorizontal)
+    email=djmodels.EmailField(verbose_name='Enter emai')
 
     def set_payoffs(self):
         selected_decision_q1 = Q1.objects.get(player=self, case_n=self.selecting_q1)

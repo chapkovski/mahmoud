@@ -4,6 +4,8 @@
     <list default="true" id="fe97e984-77be-4722-a5e3-26735c93a842" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mahmoud/models.py" afterPath="$PROJECT_DIR$/mahmoud/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mahmoud/templates/mahmoud/Results.html" afterPath="$PROJECT_DIR$/mahmoud/templates/mahmoud/Results.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mahmoud/views.py" afterPath="$PROJECT_DIR$/mahmoud/views.py" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,11 +17,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mahmoud/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="139" column="116" lean-forward="false" selection-start-line="139" selection-start-column="116" selection-end-line="139" selection-end-column="116" />
+            <state relative-caret-position="189">
+              <caret line="85" column="54" lean-forward="false" selection-start-line="85" selection-start-column="54" selection-end-line="85" selection-end-column="54" />
               <folding>
                 <element signature="e#0#134#0" expanded="true" />
               </folding>
@@ -57,11 +59,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mahmoud/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="15" column="7" lean-forward="false" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
+            <state relative-caret-position="331">
+              <caret line="103" column="14" lean-forward="false" selection-start-line="97" selection-start-column="8" selection-end-line="103" selection-end-column="14" />
               <folding>
                 <element signature="e#0#51#0" expanded="true" />
               </folding>
@@ -112,8 +114,8 @@
       <file leaf-file-name="Results.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mahmoud/templates/mahmoud/Results.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
-              <caret line="42" column="20" lean-forward="false" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
+            <state relative-caret-position="331">
+              <caret line="56" column="20" lean-forward="false" selection-start-line="56" selection-start-column="20" selection-end-line="56" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -162,14 +164,14 @@
         <option value="$PROJECT_DIR$/mahmoud/~q3.csv" />
         <option value="$PROJECT_DIR$/runtime.txt" />
         <option value="$PROJECT_DIR$/mahmoud/~q1.csv" />
-        <option value="$PROJECT_DIR$/mahmoud/templates/mahmoud/Results.html" />
         <option value="$PROJECT_DIR$/mahmoud/templates/mahmoud/Question2.html" />
         <option value="$PROJECT_DIR$/mahmoud/templates/mahmoud/Question1.html" />
         <option value="$PROJECT_DIR$/mahmoud/forms.py" />
         <option value="$PROJECT_DIR$/settings.py" />
         <option value="$PROJECT_DIR$/requirements_base.txt" />
-        <option value="$PROJECT_DIR$/mahmoud/views.py" />
         <option value="$PROJECT_DIR$/mahmoud/models.py" />
+        <option value="$PROJECT_DIR$/mahmoud/templates/mahmoud/Results.html" />
+        <option value="$PROJECT_DIR$/mahmoud/views.py" />
       </list>
     </option>
   </component>
@@ -466,14 +468,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mahmoud/templates/mahmoud/Results.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="42" column="20" lean-forward="false" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mahmoud/q1.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -506,22 +500,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mahmoud/views.py">
+    <entry file="file://$PROJECT_DIR$/mahmoud/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="15" column="7" lean-forward="false" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
+        <state relative-caret-position="189">
+          <caret line="85" column="54" lean-forward="false" selection-start-line="85" selection-start-column="54" selection-end-line="85" selection-end-column="54" />
           <folding>
-            <element signature="e#0#51#0" expanded="true" />
+            <element signature="e#0#134#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mahmoud/models.py">
+    <entry file="file://$PROJECT_DIR$/mahmoud/templates/mahmoud/Results.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="139" column="116" lean-forward="false" selection-start-line="139" selection-start-column="116" selection-end-line="139" selection-end-column="116" />
+        <state relative-caret-position="331">
+          <caret line="56" column="20" lean-forward="false" selection-start-line="56" selection-start-column="20" selection-end-line="56" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mahmoud/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="331">
+          <caret line="103" column="14" lean-forward="false" selection-start-line="97" selection-start-column="8" selection-end-line="103" selection-end-column="14" />
           <folding>
-            <element signature="e#0#134#0" expanded="true" />
+            <element signature="e#0#51#0" expanded="true" />
           </folding>
         </state>
       </provider>
