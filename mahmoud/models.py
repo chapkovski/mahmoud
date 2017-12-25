@@ -137,8 +137,8 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 class Q1(GeneralQuestion):
     case_n = models.CharField()
     cost = models.CharField()
-    d1 = djmodels.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(Constants.q1endowment)])
-    d2 = djmodels.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(Constants.q1endowment)])
+    d1 = djmodels.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(Constants.q1endowment)],null=True)
+    d2 = djmodels.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(Constants.q1endowment)],null=True)
     rule = models.BooleanField()
     real_cost= models.FloatField()
 
