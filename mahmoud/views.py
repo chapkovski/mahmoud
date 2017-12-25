@@ -13,8 +13,9 @@ class Background(Page):
     form_model = models.Player
     form_fields = ['gender','field_of_study','level_of_study']
 class Results(Page):
-    def vars_for_template(self):
-        self.player.set_payoffs()
+    ...
+    # def vars_for_template(self):
+    #     self.player.set_payoffs()
 class QPage(Page):
     qn = None
 
