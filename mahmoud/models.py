@@ -31,8 +31,8 @@ class Subsession(BaseSubsession):
         for p in self.get_players():
             for q in Constants.questions1:
                 Q1.objects.create(player=p, case_n=q['case'], cost=q['cost'],
-                                  rule=q['rule'],
-                                  real_cost=q['realcost'],)
+                                  rule=bool(q['rule']),
+                                  real_cost=float(q['realcost']),)
 
             for q in Constants.questions3:
                 Q3.objects.create(player=p, option_a=q['option_a'], option_b=q['option_b'], type=q['type'], A=q['A'],
@@ -90,11 +90,10 @@ class Player(BasePlayer):
         realcost_q = selected_decision_q1.real_cost
         q1_d1_win = selected_decision_q1.d1 * self.dice_q1_d1
         q1_d2_win = selected_decision_q1.d2 * self.dice_q1_d2
-        if int(rule_q1) == 0:
+        if rule_q1:
             final_cost_q1 = realcost_q
         else:
             final_cost_q1 = selected_decision_q1.d1 * realcost_q
-
         self.profit_q1 = float(q1_d1_win) + float(q1_d2_win) - float(final_cost_q1)
 
         selected_decision_q3a = Q3.objects.filter(player=self, type='a')[self.selecting_q3a - 1]
@@ -133,13 +132,13 @@ class GeneralQuestion(djmodels.Model):
 
     class Meta:
         abstract = True
-
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 class Q1(GeneralQuestion):
     case_n = models.CharField()
     cost = models.CharField()
-    d1 = models.IntegerField()
-    d2 = models.IntegerField()
+    d1 = djmodels.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(Constants.q1endowment)])
+    d2 = djmodels.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(Constants.q1endowment)])
     rule = models.BooleanField()
     real_cost= models.FloatField()
 
