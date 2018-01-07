@@ -27,7 +27,6 @@ class Constants(BaseConstants):
 
 class Subsession(BaseSubsession):
     def creating_session(self):
-        print(Constants.questions1)
         for p in self.get_players():
             for q in Constants.questions1:
                 Q1.objects.create(player=p, case_n=q['case'], cost=q['cost'],

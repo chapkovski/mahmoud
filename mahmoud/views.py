@@ -32,11 +32,13 @@ class Question1(QPage):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['formset'] = Q1FormSet(instance=self.player)
+        print(context['formset'])
         return context
 
     def post(self):
         context = super().get_context_data()
         formset = Q1FormSet(self.request.POST, instance=self.player)
+
         context['formset'] = formset
         if not formset.is_valid():
             return self.render_to_response(context)
@@ -61,7 +63,6 @@ class Question3(QPage):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         queryset = Q3.objects.filter(player=self.player, type=self.qtype)
-        print("QQQQ",queryset)
         context['formset'] = Q3FormSet(instance=self.player, queryset=queryset)
         return context
 
@@ -98,9 +99,9 @@ page_sequence = [
     Intro,
     Background,
     Question1,
-    Question2,
-    Question3a,
-    Question3b,
-    Question3c,
-    Results,
+    # Question2,
+    # Question3a,
+    # Question3b,
+    # Question3c,
+    # Results,
 ]
