@@ -60,6 +60,10 @@ class Group(BaseGroup):
 
 
 class Player(BasePlayer):
+    dump_q1 = models.CharField()
+    dump_q3a = models.CharField()
+    dump_q3b = models.CharField()
+    dump_q3c = models.CharField()
     selecting_q1 = models.IntegerField()
     selecting_q3a = models.IntegerField()
     selecting_q3b = models.IntegerField()

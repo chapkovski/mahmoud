@@ -12,7 +12,6 @@ class Q1Form(forms.ModelForm):
         fields = ['d1', 'd2']
 
     def clean(self):
-        print('im in clean for q1form')
         cleaned_data = super().clean()
         d1 = cleaned_data.get('d1')
         d2 = cleaned_data.get('d2')
@@ -33,11 +32,9 @@ class Q3Form(forms.ModelForm):
         super().__init__(*args, **kwargs)
         curinstance = kwargs['instance']
         answer_choices = self.fields['answer'].widget.choices.copy()
-        print(answer_choices)
-
         answer_choices[0] = (True, '{}: {}'.format(answer_choices[0][1], curinstance.option_a))
         answer_choices[1] = (False, '{}: {}'.format(answer_choices[1][1], curinstance.option_b))
-        print(answer_choices)
+
         self.fields['answer'].widget.choices = answer_choices
 
 

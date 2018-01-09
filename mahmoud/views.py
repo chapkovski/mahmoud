@@ -7,16 +7,23 @@ from django import forms
 from .forms import Q1FormSet, Q3FormSet
 from django.db.models import Q
 
+
 class Intro(Page):
     ...
+
+
 class Background(Page):
     form_model = models.Player
-    form_fields = ['gender','field_of_study','level_of_study']
+    form_fields = ['gender', 'field_of_study', 'level_of_study']
+
+
 class Results(Page):
     form_model = models.Player
     form_fields = ['email']
     # def vars_for_template(self):
     #     self.player.set_payoffs()
+
+
 class QPage(Page):
     qn = None
 
@@ -32,7 +39,6 @@ class Question1(QPage):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['formset'] = Q1FormSet(instance=self.player)
-        print(context['formset'])
         return context
 
     def post(self):
@@ -45,6 +51,8 @@ class Question1(QPage):
         formset.save()
         return super().post()
 
+    def before_next_page(self):
+        self.player.dump_q1 = self.player.mahmoud_q1_question.all().values('case_n', 'd1', 'd2')
 
 
 class Question2(QPage):
@@ -59,49 +67,66 @@ class Question2(QPage):
 
 class Question3(QPage):
     qtype = None
+    template_name = 'mahmoud/Question3.html'
+    @property
+    def queryset(self):
+        return self.player.mahmoud_q3_question.filter(type=self.qtype)
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        queryset = Q3.objects.filter(player=self.player, type=self.qtype)
-        context['formset'] = Q3FormSet(instance=self.player, queryset=queryset)
+        context['formset'] = Q3FormSet(instance=self.player, queryset=self.queryset)
         return context
 
     def post(self):
         context = super().get_context_data()
-        queryset = Q3.objects.filter(player=self.player, type=self.qtype)
-        formset = Q3FormSet(self.request.POST, instance=self.player, queryset=queryset)
+        formset = Q3FormSet(self.request.POST, instance=self.player, queryset=self.queryset)
         context['formset'] = formset
         if not formset.is_valid():
             return self.render_to_response(context)
         formset.save()
         return super().post()
 
+    def before_next_page(self):
+        q = self.queryset.values(
+            'option_a',
+            'option_b',
+            'answer')
+        for i in q:
+            i['answer'] = i['option_a'] if i['answer'] else i['option_b']
+
+        setattr(self.player, 'dump_q{}'.format(self.qn), q)
+        self.player.save()
+
 
 class Question3a(Question3):
     qn = '3a'
     qtype = 'a'
-    template_name = 'mahmoud/Question3.html'
+
+
 
 class Question3b(Question3):
     qn = '3b'
     qtype = 'b'
-    template_name = 'mahmoud/Question3.html'
+
+
 
 class Question3c(Question3):
     qn = '3c'
     qtype = 'c'
-    template_name = 'mahmoud/Question3.html'
+
 
     def before_next_page(self):
+        super().before_next_page()
         self.player.set_payoffs()
+
 
 page_sequence = [
     Intro,
     Background,
     Question1,
-    # Question2,
-    # Question3a,
-    # Question3b,
-    # Question3c,
-    # Results,
+    Question2,
+    Question3a,
+    Question3b,
+    Question3c,
+    Results,
 ]
