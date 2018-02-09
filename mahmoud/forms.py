@@ -1,4 +1,8 @@
-import floppyforms.__future__ as forms
+from otree import __version__
+if int(__version__.split('.')[0])<=1:
+    import floppyforms.__future__ as forms
+else:
+    from django import forms
 from .models import Q1, Q3, Player, Constants
 
 from django.forms import inlineformset_factory, BaseFormSet, BaseInlineFormSet
